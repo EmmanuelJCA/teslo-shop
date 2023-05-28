@@ -36,3 +36,6 @@ $ yarn run start:dev
 # production mode
 $ yarn run start:prod
 ```
+
+## Execute seed
+http://localhost:3000/api/seed
