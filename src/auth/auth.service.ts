@@ -17,7 +17,6 @@ export class AuthService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-
     const { password, ...userData } = createUserDto;
 
     try {
@@ -65,6 +64,10 @@ export class AuthService {
       ...user,
       token: this.getJwtToken({id: user.id})
     }
+  }
+
+  async findUser(id: string) {    
+    return await this.userRepository.findOneBy({id});
   }
 
   private getJwtToken(payload: JwtPayload) {
